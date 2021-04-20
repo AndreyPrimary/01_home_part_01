@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 
-if ($ENV{GITHUB_RUN_NUMBER} NOT EQUAL "")
+#if ($ENV{GITHUB_RUN_NUMBER} NOT EQUAL "")
+#if (DEFINED <name>|CACHE{<name>}|ENV{<name>})
+if (DEFINED ENV{GITHUB_RUN_NUMBER})
     project(helloworld VERSION 0.0.$ENV{GITHUB_RUN_NUMBER})
 else()
     project(helloworld VERSION 0.0.1)
